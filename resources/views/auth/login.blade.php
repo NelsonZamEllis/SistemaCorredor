@@ -37,7 +37,7 @@
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example11">Usuario</label>
-                    <input type="email" id="form2Example11" class="form-control"
+                    <input type="email" name="email" id="form2Example11" class="form-control"
                       placeholder="Nombre de Usuario" />
                     
                   </div>
