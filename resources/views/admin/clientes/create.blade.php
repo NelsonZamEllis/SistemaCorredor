@@ -28,42 +28,43 @@
                 <h5 class="m-0">Registro de datos</h5>
               </div>
               <div class="card-body">
-                <form action=" {{url('/admin/clientes')}} " method="POST">
+                <form action=" {{url('/admin/clientes')}} " method="POST" enctype="multipart/form-data">
+                  @csrf
                     <div class="row">
                        <div class="col-md-2">
                         <div class="form-group">
                             <label for="">Cédula</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="cedula">
                         </div>
                     </div>
                        <div class="col-md-2">
                         <div class="form-group">
                             <label for="">Nombre</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="nombre">
                         </div>
                         </div>
                         <div class="col-md-2">
                         <div class="form-group">
                             <label for="">Teléfono</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="telefono">
                         </div>
                         </div>
                         <div class="col-md-2">
                         <div class="form-group">
                             <label for="">Correo</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="correo">
                         </div>
                         </div>
                         <div class="col-md-2">
                         <div class="form-group">
                             <label for="">Dirección</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="direccion">
                         </div>
                         </div>
                         <div class="col-md-2">
                         <div class="form-group">
                             <label for="">Nacimiento</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="nacimiento">
                         </div>
                         </div>
                         </div>  
