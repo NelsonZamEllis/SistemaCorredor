@@ -16,10 +16,17 @@ use App\Http\Controllers\ClienteController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('home', ClienteController::class);
+
+//Rutas para el administrador
+Route::get('/admin', function () {
+    return view(view: 'admin.index');
+});
+
+// Rutas para el administrador - clientes
+Route::get('/admin/clientes', [App\Http\Controllers\ClienteController::class, 'index']);
