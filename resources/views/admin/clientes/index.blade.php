@@ -25,13 +25,37 @@
           <div class="col-md-12">
             <div class="card card-primary card-outline">
               <div class="card-header">
-                <h5 class="m-0">Featured</h5>
+                <h5 class="m-0">Clientes</h5>
               </div>
               <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped" >
+                  <thead>
+                    <tr>
+                      <th>Nro</th>
+                      <th>Cédula</th>
+                      <th>Nombre</th>
+                      <th>Teléfono</th>
+                      <th>Correo</th>
+                      <th>Dirección</th>
+                      <th>F. Nacimiento</th>
+                    </tr>
+                  </thead>
+                  <tbody>   
+                      @foreach ($clientes as $cliente)
+                      <tr>
+                          <td> {{$cliente->id}} </td>
+                          <td> {{$cliente->cedula}} </td>
+                          <td> {{$cliente->nombre}} </td>
+                          <td> {{$cliente->telefono}} </td>
+                          <td> {{$cliente->correo}} </td>
+                          <td> {{$cliente->direccion}} </td>
+                          <td> {{$cliente->nacimiento}} </td>
+                      </tr>   
+                      @endforeach 
+                  </tbody>
+                </table>
+              </div>
               </div>
             </div>
           </div>

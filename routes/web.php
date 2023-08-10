@@ -29,4 +29,7 @@ Route::get('/admin', function () {
 });
 
 // Rutas para el administrador - clientes
-Route::get('/admin/clientes', [App\Http\Controllers\ClienteController::class, 'index']);
+//Route::get('/admin/clientes', [App\Http\Controllers\ClienteController::class, 'index']);
+//Route::get('/admin/clientes/create', [App\Http\Controllers\ClienteController::class, 'create']);
+
+Route::resource('/admin/clientes', \App\Http\Controllers\ClienteController::class);
