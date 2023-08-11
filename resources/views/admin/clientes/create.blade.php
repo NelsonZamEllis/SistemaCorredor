@@ -72,7 +72,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="">Archivo Adjunto</label>
-                                <input type="file" class="form-control">
+                                <input type="file" name="files[]" multiple class="form-control">
                             </div>
                            </div>
                     </div>
