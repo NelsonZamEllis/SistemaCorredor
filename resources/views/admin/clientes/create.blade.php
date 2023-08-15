@@ -68,14 +68,6 @@
                         </div>
                         </div>
                         </div>  
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="">Archivo Adjunto</label>
-                                <input type="file" name="files[]" multiple class="form-control">
-                            </div>
-                           </div>
-                    </div>
                     <hr>
                            <div class="row">
                             <div class="col-md-6">

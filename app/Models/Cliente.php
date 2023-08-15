@@ -12,5 +12,5 @@ class Cliente extends Model
     protected $primarykey='id';
     protected $fillable=['cedula','nombre', 'telefono', 'correo', 'direccion', 'nacimiento'];
     protected $guarded=[];
-    public $timestamps=false;
+    public $timestamps=true;
 }

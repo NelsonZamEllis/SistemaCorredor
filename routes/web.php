@@ -32,4 +32,4 @@ Route::get('/admin', function () {
 //Route::get('/admin/clientes', [App\Http\Controllers\ClienteController::class, 'index']);
 //Route::get('/admin/clientes/create', [App\Http\Controllers\ClienteController::class, 'create']);
 
-Route::resource('/admin/clientes', \App\Http\Controllers\ClienteController::class);
+Route::resource('/admin/clientes', ClienteController::class);

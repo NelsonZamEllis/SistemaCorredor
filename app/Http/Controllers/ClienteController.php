@@ -4,17 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClienteController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $clientes=Cliente::all();
-        return view('admin.clientes.index',compact('clientes'));
-        //
+        $busqueda=trim($request->get('busqueda'));
+        $clientes = DB::table('clientes')
+                        ->where('cedula','like','%'.$busqueda.'%')
+                        ->orwhere('nombre','like','%'.$busqueda.'%')
+                        ->orwhere('correo','like','%'.$busqueda.'%')
+                        ->paginate(10);
+        return view('admin.clientes.index', compact('clientes', 'busqueda'));
     }
 
     /**
@@ -40,6 +45,8 @@ class ClienteController extends Controller
         $clientes->nacimiento=$request->input('nacimiento');
         $clientes->save();
         return redirect()->back();
+
+
         //
     }
 
@@ -71,6 +78,7 @@ class ClienteController extends Controller
         $clientes->correo=$request->input('correo');
         $clientes->direccion=$request->input('direccion');
         $clientes->nacimiento=$request->input('nacimiento');
+        $clientes->timestamps();
         $clientes->update();
         return redirect()->back();
         //

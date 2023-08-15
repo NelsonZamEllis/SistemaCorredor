@@ -23,6 +23,18 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
+            <form action="{{route('clientes.index')}}" method="GET">
+              <div class="form-row">
+                <div class="col-md-4 my-1">
+                  <input type="text" class="form-control" name="busqueda" value="{{$busqueda}}">
+                </div>
+                <div class="col-auto my-1" >
+                  <input type="submit" class="btn btn-primary" value="Buscar">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-12">
             <div class="card card-primary card-outline">
               <div class="card-header">
                 <h5 class="m-0">Clientes</h5>
@@ -41,7 +53,7 @@
                       <th>F. Nacimiento</th>
                     </tr>
                   </thead>
-                  <tbody>   
+                  <tbody>
                       @foreach ($clientes as $cliente)
                       <tr>
                           <td> {{$cliente->id}} </td>

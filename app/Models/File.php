@@ -9,6 +9,6 @@ class File extends Model
 {
     protected $fillable = [
         'name',
-        'user_id'
+        'cliente_id'
     ];
 }
