@@ -39,34 +39,62 @@
                     </div>
                        <div class="col-md-2">
                         <div class="form-group">
+                            <label for="">Nacionalidad</label>
+                            <select name="nacionalidad" id="" class="form-control">
+                              <option value="">--Seleccione la Nacionalidad--</option>
+                              <option value="Venezolano">Venezolano</option>
+                              <option value="Extranjero">Extranjero</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="">N° Poliza</label>
+                            <input type="text" class="form-control" name="poliza">
+                        </div>
+                        </div>
+                        <div class="col-md-2">
+                        <div class="form-group">
                             <label for="">Nombre</label>
                             <input type="text" class="form-control" name="nombre">
                         </div>
                         </div>
                         <div class="col-md-2">
                         <div class="form-group">
-                            <label for="">Teléfono</label>
+                            <label for="">Apellido</label>
+                            <input type="text" class="form-control" name="apellido">
+                        </div>
+                        </div>
+                        <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="">Telefono</label>
                             <input type="text" class="form-control" name="telefono">
                         </div>
                         </div>
                         <div class="col-md-2">
-                        <div class="form-group">
-                            <label for="">Correo</label>
-                            <input type="text" class="form-control" name="correo">
-                        </div>
-                        </div>
-                        <div class="col-md-2">
-                        <div class="form-group">
-                            <label for="">Dirección</label>
-                            <input type="text" class="form-control" name="direccion">
-                        </div>
-                        </div>
-                        <div class="col-md-2">
-                        <div class="form-group">
-                            <label for="">Nacimiento</label>
-                            <input type="text" class="form-control" name="nacimiento">
-                        </div>
-                        </div>
+                          <div class="form-group">
+                              <label for="">Correo</label>
+                              <input type="email" class="form-control" name="correo">
+                          </div>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="">Dirección</label>
+                                <input type="text" class="form-control" name="direccion">
+                            </div>
+                            </div>
+                            <div class="col-md-2">
+                              <div class="form-group">
+                                  <label for="">F. Nacimiento</label>
+                                  <input type="text" class="form-control" name="nacimiento">
+                              </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="">Subir Archivos</label>
+                                    <input type="file" class="form-control" name="files[]" multiple>
+                                </div>
+                                </div>
                         </div>  
                     <hr>
                            <div class="row">

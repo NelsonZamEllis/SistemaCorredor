@@ -10,7 +10,7 @@ class Cliente extends Model
     use HasFactory;
     protected $table='clientes';
     protected $primarykey='id';
-    protected $fillable=['cedula','nombre', 'telefono', 'correo', 'direccion', 'nacimiento'];
+    protected $fillable=['cedula','nacionalidad', 'poliza', 'nombre', 'apellido', 'telefono', 'correo', 'direccion', 'nacimiento'];
     protected $guarded=[];
     public $timestamps=true;
 }

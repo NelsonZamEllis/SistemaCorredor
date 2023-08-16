@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use App\Models\File;
+use Faker\Guesser\Name;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +18,9 @@ class ClienteController extends Controller
         $busqueda=trim($request->get('busqueda'));
         $clientes = DB::table('clientes')
                         ->where('cedula','like','%'.$busqueda.'%')
+                        ->orwhere('poliza','like','%'.$busqueda.'%')
                         ->orwhere('nombre','like','%'.$busqueda.'%')
+                        ->orwhere('apellido','like','%'.$busqueda.'%')
                         ->orwhere('correo','like','%'.$busqueda.'%')
                         ->paginate(10);
         return view('admin.clientes.index', compact('clientes', 'busqueda'));
@@ -36,18 +40,31 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        $clientes=new cliente;
+        $clienteid = $clientes=new cliente;
         $clientes->cedula=$request->input('cedula');
+        $clientes->nacionalidad=$request->input('nacionalidad');
+        $clientes->poliza=$request->input('poliza');
         $clientes->nombre=$request->input('nombre');
+        $clientes->apellido=$request->input('apellido');
         $clientes->telefono=$request->input('telefono');
         $clientes->correo=$request->input('correo');
         $clientes->direccion=$request->input('direccion');
         $clientes->nacimiento=$request->input('nacimiento');
         $clientes->save();
+
+        //$cliente_id = $clienteid->id;
+        $max_size = (int)ini_get('upload_max_filesize') * 10240;
+
+        $files = $request->file('files');
+
+        foreach ($files as $file) {
+            File::create([
+                'name' => $file->getClientOriginalName(),
+                'cliente_id' => $clienteid->id
+            ]);
+        }
+        //dd($files);*/
         return redirect()->back();
-
-
-        //
     }
 
     /**
@@ -73,7 +90,10 @@ class ClienteController extends Controller
     {
         $clientes=cliente::find($id);
         $clientes->cedula=$request->input('cedula');
+        $clientes->nacionalidad=$request->select('nacionalidad');
+        $clientes->poliza=$request->input('poliza');
         $clientes->nombre=$request->input('nombre');
+        $clientes->apellido=$request->input('apellido');
         $clientes->telefono=$request->input('telefono');
         $clientes->correo=$request->input('correo');
         $clientes->direccion=$request->input('direccion');

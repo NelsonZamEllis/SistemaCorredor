@@ -46,7 +46,10 @@
                     <tr>
                       <th>Nro</th>
                       <th>Cédula</th>
+                      <th>Nacionalidad</th>
+                      <th>N° Poliza</th>
                       <th>Nombre</th>
+                      <th>Apellido</th>
                       <th>Teléfono</th>
                       <th>Correo</th>
                       <th>Dirección</th>
@@ -58,7 +61,10 @@
                       <tr>
                           <td> {{$cliente->id}} </td>
                           <td> {{$cliente->cedula}} </td>
+                          <td> {{$cliente->nacionalidad}} </td>
+                          <td> {{$cliente->poliza}} </td>
                           <td> {{$cliente->nombre}} </td>
+                          <td> {{$cliente->apellido}} </td>
                           <td> {{$cliente->telefono}} </td>
                           <td> {{$cliente->correo}} </td>
                           <td> {{$cliente->direccion}} </td>
