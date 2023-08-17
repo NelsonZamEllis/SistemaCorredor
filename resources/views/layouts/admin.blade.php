@@ -15,6 +15,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}} ">
   <!-- Theme style -->
   <link rel="stylesheet" href=" {{asset('dist/css/adminlte.min.css')}} ">
+  <script src="https://kit.fontawesome.com/851bc5091e.js" crossorigin="anonymous"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -65,13 +66,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('clientes.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Listado de Clientes</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('clientes.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrar Nuevo</p>
                 </a>

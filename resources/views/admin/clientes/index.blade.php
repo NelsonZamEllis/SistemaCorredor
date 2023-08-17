@@ -44,6 +44,7 @@
                 <table class="table table-bordered table-hover table-striped" >
                   <thead>
                     <tr>
+                      <th>Ácciones</th>
                       <th>Nro</th>
                       <th>Cédula</th>
                       <th>Nacionalidad</th>
@@ -59,6 +60,20 @@
                   <tbody>
                       @foreach ($clientes as $cliente)
                       <tr>
+                          <td class="row">
+                            <div class="col">      
+                            <form action="{{route("clientes.edit", $cliente->id)}}" method="GET">
+                              <button class="btn btn-primary"><i class="fa-solid fa-eye"></i></button> 
+                            </form> 
+                          </div>
+
+                          <div class="col">
+                            <form action="{{route("clientes.edit", $cliente->id)}}" method="GET">
+                              <button class="btn btn-warning m"><i class="fa-solid fa-pen-to-square"></i></button> 
+                            </form>
+                          </div>
+
+                          </td>
                           <td> {{$cliente->id}} </td>
                           <td> {{$cliente->cedula}} </td>
                           <td> {{$cliente->nacionalidad}} </td>

@@ -80,15 +80,17 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
+        $cliente=cliente::find($id);
+        return view("admin.clientes.edit", compact('cliente'));
         //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        $clientes=cliente::find($id);
+        /**$clientes=cliente::find($id);
         $clientes->cedula=$request->input('cedula');
         $clientes->nacionalidad=$request->select('nacionalidad');
         $clientes->poliza=$request->input('poliza');
@@ -100,8 +102,9 @@ class ClienteController extends Controller
         $clientes->nacimiento=$request->input('nacimiento');
         $clientes->timestamps();
         $clientes->update();
-        return redirect()->back();
-        //
+        return view("edit");
+        //*/
+
     }
 
     /**

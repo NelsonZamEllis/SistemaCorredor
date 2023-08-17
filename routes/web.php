@@ -33,3 +33,5 @@ Route::get('/admin', function () {
 //Route::get('/admin/clientes/create', [App\Http\Controllers\ClienteController::class, 'create']);
 
 Route::resource('/admin/clientes', ClienteController::class);
+
+Route::get('/admin/clientes/edit/{}', [ClienteController::class, 'edit'])->name('cliente.edit');
